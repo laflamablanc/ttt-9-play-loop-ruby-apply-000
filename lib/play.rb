@@ -44,5 +44,16 @@ def play(board)
   end
 
 end
+
+def turn(board)
+  puts"Please enter 1-9:"
+  num = gets.strip
+  idx = input_to_index(num)
   
-  
+  if valid_move?(board,idx) == true
+    move(board,idx,"X")
+    display_board(board)
+  else
+    turn(board)
+  end
+end  
